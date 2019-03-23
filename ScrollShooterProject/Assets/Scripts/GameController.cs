@@ -9,8 +9,9 @@ public class GameController : MonoBehaviour
     PauseMenu pauseMenu;
     GameOverMenu gameOverMenu;
     LevelCompletedMenu levelCompletedMenu;
-
     EnemySpawner enemySpawner;
+
+
     void Start()
     {
         pauseMenu = FindObjectOfType<PauseMenu>();
@@ -39,5 +40,17 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             pauseMenu.IsPaused = !pauseMenu.IsPaused;
+    }
+    public void Pause()
+    {
+
+    }
+    public void Resume()
+    {
+
+    }
+    public void MainMenu()
+    {
+
     }
 }
