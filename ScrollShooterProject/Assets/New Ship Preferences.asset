@@ -15,5 +15,6 @@ MonoBehaviour:
   moveSpeed: 5
   shotInterval: 0.3
   bulletSpeed: 20
+  damageAmount: 50
   bulletPrefab: {fileID: 114730444772407556, guid: ba1e655bccd2be74c8a446d355ae0720,
     type: 2}

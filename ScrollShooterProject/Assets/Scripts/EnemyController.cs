@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyController : MonoBehaviour
 {
+    public event Action<GameObject> OutOfScreenEvent;
     ShootComponent shootComponent;
     MoveComponent moveComponent;
     HealthComponent healthComponent;
     public BulletComponent bulletPrefab;
     public float bulletSpeed;
+    public float damageAmount = 20f;
     public float shotInterval = 0.1f;
 
     public bool shootingEnabled;
@@ -31,12 +34,13 @@ public class EnemyController : MonoBehaviour
         if (movementEnabled)
             moveComponent.Move(Vector2.down, 3f);
 
-        shotTimer += Time.deltaTime;
-        if (shootingEnabled && shotTimer >= shotInterval)
+        shotTimer -= Time.deltaTime;
+        if (shootingEnabled && shotTimer <= 0)
         {
-            shotTimer = 0;
-            shootComponent.Shot(bulletPrefab, transform.position, Vector2.down, bulletSpeed);
+            shotTimer = shotInterval;
+            shootComponent.Shot(bulletPrefab, damageAmount, transform.position, Vector2.down, bulletSpeed);
         }
-
+        if (OutOfScreenEvent != null && transform.position.y < -2f)
+            OutOfScreenEvent(gameObject);
     }
 }

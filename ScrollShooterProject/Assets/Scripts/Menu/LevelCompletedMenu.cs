@@ -8,11 +8,11 @@ public class LevelCompletedMenu : MonoBehaviour
     public GameObject levelCompletedPanel;
     public void ShowMenu()
     {
-        levelCompletedPanel.SetActive(false);
+        levelCompletedPanel.SetActive(true);
     }
     public void HideMenu()
     {
-        levelCompletedPanel.SetActive(true);
+        levelCompletedPanel.SetActive(false);
     }
     public void Restart()
     {

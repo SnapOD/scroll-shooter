@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if (shootingEnabled && shotTimer >= shipPreferences.ShotInterval)
         {
             shotTimer = 0;
-            shootComponent.Shot(shipPreferences.BulletPrefab, transform.position, Vector2.up, shipPreferences.BulletSpeed);
+            shootComponent.Shot(shipPreferences.BulletPrefab, shipPreferences.DamageAmount, transform.position, Vector2.up, shipPreferences.BulletSpeed);
         }
     }
 }

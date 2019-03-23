@@ -12,11 +12,11 @@ public class GameOverMenu : MonoBehaviour
     }
     public void ShowMenu()
     {
-        gameOverPanel.SetActive(false);
+        gameOverPanel.SetActive(true);
     }
     public void HideMenu()
     {
-        gameOverPanel.SetActive(true);
+        gameOverPanel.SetActive(false);
     }
     public void Restart()
     {
