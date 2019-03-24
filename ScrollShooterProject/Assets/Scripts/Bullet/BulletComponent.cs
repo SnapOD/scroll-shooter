@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletComponent : MonoBehaviour
 {
     public float damageAmount = 20f;
-    public GameObject owner;
+    public string ownerTag;
     public float overlapRadius = 0.1f;
     public Vector2 movement;
     void Start()
@@ -18,7 +18,7 @@ public class BulletComponent : MonoBehaviour
         Collider2D collider2D = Physics2D.OverlapCircle(transform.position, overlapRadius);
         if (collider2D != null)
         {
-            if (collider2D.gameObject.tag != owner.tag)
+            if (collider2D.gameObject.tag != ownerTag)
             {
                 HealthComponent shipHealth = collider2D.GetComponent<HealthComponent>();
                 if (shipHealth != null)

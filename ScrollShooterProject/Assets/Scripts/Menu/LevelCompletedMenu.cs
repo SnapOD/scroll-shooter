@@ -1,11 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelCompletedMenu : MonoBehaviour
 {
     public GameObject levelCompletedPanel;
+    public Button restartButton;
+    public Button mainMenuButton;
+    private void Start()
+    {
+        restartButton.onClick.AddListener(FindObjectOfType<GameController>().Restart);
+        mainMenuButton.onClick.AddListener(FindObjectOfType<GameController>().MainMenu);
+    }
     public void ShowMenu()
     {
         levelCompletedPanel.SetActive(true);
@@ -13,13 +18,5 @@ public class LevelCompletedMenu : MonoBehaviour
     public void HideMenu()
     {
         levelCompletedPanel.SetActive(false);
-    }
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    public void MainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
     }
 }

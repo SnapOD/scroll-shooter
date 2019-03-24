@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public ShipPreferences shipPreferences;
-    IDirectionInput directionInput;
+    public Transform weaponPoint;
+    IInputSource inputSource;
     MoveComponent moveComponent;
     ShootComponent shootComponent;
     HealthComponent shipHealth;
@@ -17,10 +18,10 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        directionInput = GetComponent<IDirectionInput>();
+        inputSource = GetComponent<IInputSource>();
         moveComponent = GetComponent<MoveComponent>();
         shootComponent = GetComponent<ShootComponent>();
-        shipHealth = GetComponent<HealthComponent>();
+        shipHealth = GetComponentInChildren<HealthComponent>();
         shipHealth.DeathEvent += ShipHealth_DeathEvent;
     }
 
@@ -36,13 +37,13 @@ public class PlayerController : MonoBehaviour
             return;
 
         if (movementEnabled)
-            moveComponent.Move(directionInput.Direction, shipPreferences.MoveSpeed);
+            moveComponent.Move(inputSource.Direction, shipPreferences.MoveSpeed);
 
         shotTimer += Time.deltaTime;
         if (shootingEnabled && shotTimer >= shipPreferences.ShotInterval)
         {
             shotTimer = 0;
-            shootComponent.Shot(shipPreferences.BulletPrefab, shipPreferences.DamageAmount, transform.position, Vector2.up, shipPreferences.BulletSpeed);
+            shootComponent.Shot(shipPreferences.BulletPrefab, shipPreferences.DamageAmount, weaponPoint.position, Vector2.up, shipPreferences.BulletSpeed);
         }
     }
 }

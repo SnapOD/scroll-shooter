@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114512141181896956}
   - component: {fileID: 114876412020349212}
   - component: {fileID: 114870858396310024}
+  - component: {fileID: 114258620407210548}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -162,6 +163,19 @@ MonoBehaviour:
   shotInterval: 3
   shootingEnabled: 1
   movementEnabled: 1
+--- !u!114 &114258620407210548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183801774695462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd3bd0c591769a4a9fa0253d800ea57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 198000998864123632, guid: f194f7d28120e9544bc6fe86d0efe202,
+    type: 2}
 --- !u!114 &114512141181896956
 MonoBehaviour:
   m_ObjectHideFlags: 1

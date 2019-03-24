@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public Button restartButton;
+    public Button mainMenuButton;
     private void Start()
     {
-        gameOverPanel.SetActive(false);
+        restartButton.onClick.AddListener(FindObjectOfType<GameController>().Restart);
+        mainMenuButton.onClick.AddListener(FindObjectOfType<GameController>().MainMenu);
     }
     public void ShowMenu()
     {
@@ -18,12 +19,5 @@ public class GameOverMenu : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
     }
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    public void MainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+
 }

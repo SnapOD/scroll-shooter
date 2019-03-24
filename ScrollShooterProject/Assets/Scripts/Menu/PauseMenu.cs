@@ -1,41 +1,31 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
-    [SerializeField] bool isPaused;
-    public bool IsPaused
-    {
-        get { return isPaused; }
-        set
-        {
-            isPaused = value;
-            UpdateState();
-        }
-    }
+    public Button resumeButton;
+    public Button mainMenuButton;
+    public Button quitButton;
+    [Space]
+    public Button pauseButton;
+
     private void Start()
     {
-        UpdateState();
+        GameController gc = FindObjectOfType<GameController>();
+        resumeButton.onClick.AddListener(gc.Resume);
+        mainMenuButton.onClick.AddListener(gc.MainMenu);
+        quitButton.onClick.AddListener(gc.Quit);
+        pauseButton.onClick.AddListener(gc.Pause);
     }
-    private void UpdateState()
+    public void ShowMenu()
     {
-        pauseMenuPanel.SetActive(isPaused);
-        Time.timeScale = isPaused ? 0 : 1;
+        pauseMenuPanel.SetActive(true);
+        pauseButton.gameObject.SetActive(false);
     }
-    public void Resume()
+    public void HideMenu()
     {
-        isPaused = false;
-        UpdateState();
-    }
-    public void MainMenu()
-    {
-        isPaused = false;
-        UpdateState();
-        SceneManager.LoadScene("MainMenu");
-    }
-    public void Quit()
-    {
-        Application.Quit();
+        pauseMenuPanel.SetActive(false);
+        pauseButton.gameObject.SetActive(true);
     }
 }

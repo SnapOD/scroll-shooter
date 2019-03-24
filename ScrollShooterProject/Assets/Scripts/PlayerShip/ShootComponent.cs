@@ -10,7 +10,7 @@ public class ShootComponent : MonoBehaviour
     {
         BulletComponent bulletInst = Instantiate(bulletPrefab, spawnPoint, Quaternion.identity);
         bulletInst.damageAmount = damageAmount;
-        bulletInst.owner = gameObject;
+        bulletInst.ownerTag = gameObject.tag;
         bulletInst.movement = direction * speed;
     }
 }
