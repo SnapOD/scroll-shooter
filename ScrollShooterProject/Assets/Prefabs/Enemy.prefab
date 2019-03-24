@@ -27,8 +27,10 @@ GameObject:
   - component: {fileID: 114876412020349212}
   - component: {fileID: 114870858396310024}
   - component: {fileID: 114258620407210548}
+  - component: {fileID: 114333118271890526}
+  - component: {fileID: 114198773491224502}
   m_Layer: 0
-  m_Name: EnemyPrefab
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183801774695462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.05, y: 3.84, z: 0}
+  m_LocalPosition: {x: 0, y: 8.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4628758320996854}
@@ -163,6 +165,20 @@ MonoBehaviour:
   shotInterval: 3
   shootingEnabled: 1
   movementEnabled: 1
+--- !u!114 &114198773491224502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183801774695462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378a00bf5ffeb424499770d80d215762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 5
+  coinPrefab: {fileID: 114655399447869994, guid: 3433a8c26d40ace4284c8d15de20bb1c,
+    type: 2}
 --- !u!114 &114258620407210548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,6 +192,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPrefab: {fileID: 198000998864123632, guid: f194f7d28120e9544bc6fe86d0efe202,
     type: 2}
+--- !u!114 &114333118271890526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183801774695462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2187043fe6ddc464fabea9e459bb33ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 100
 --- !u!114 &114512141181896956
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,8 +22,10 @@ public class BulletComponent : MonoBehaviour
             {
                 HealthComponent shipHealth = collider2D.GetComponent<HealthComponent>();
                 if (shipHealth != null)
+                {
                     shipHealth.Hit(damageAmount);
-                Destroy(gameObject);
+                    Destroy(gameObject);
+                }
             }
         }
     }
