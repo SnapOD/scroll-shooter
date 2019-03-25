@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -293,8 +293,8 @@ GameObject:
   - component: {fileID: 26826118}
   - component: {fileID: 26826116}
   - component: {fileID: 26826112}
-  - component: {fileID: 26826117}
   - component: {fileID: 26826114}
+  - component: {fileID: 26826117}
   - component: {fileID: 26826113}
   - component: {fileID: 26826119}
   - component: {fileID: 26826120}
@@ -13824,7 +13824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yPosition: 25.07
   xRange: 12
-  interval: 1
+  interval: 2
   enemyPrefab: {fileID: 1183801774695462, guid: c1f83dab911a7a84e97f20edf6189852,
     type: 2}
   spawnCount: 10
