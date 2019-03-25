@@ -12,11 +12,32 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        GameController gc = FindObjectOfType<GameController>();
-        resumeButton.onClick.AddListener(gc.Resume);
-        mainMenuButton.onClick.AddListener(gc.MainMenu);
-        quitButton.onClick.AddListener(gc.Quit);
-        pauseButton.onClick.AddListener(gc.Pause);
+        GameController gameController = FindObjectOfType<GameController>();
+        resumeButton.onClick.AddListener(gameController.Resume);
+        mainMenuButton.onClick.AddListener(gameController.MainMenu);
+        quitButton.onClick.AddListener(gameController.Quit);
+        pauseButton.onClick.AddListener(gameController.Pause);
+
+        gameController.PauseEvent += PauseEventHandler;
+        gameController.ResumeEvent += ResumeEventHandler;
+        gameController.GameOverEvent += GameOverEventHandler;
+        gameController.LevelCompletedEvent += LevelCompletedEventHandler;
+    }
+    private void PauseEventHandler()
+    {
+        ShowMenu();
+    }
+    private void ResumeEventHandler()
+    {
+        HideMenu();
+    }
+    private void LevelCompletedEventHandler()
+    {
+        pauseButton.gameObject.SetActive(false);
+    }
+    private void GameOverEventHandler()
+    {
+        pauseButton.gameObject.SetActive(false);
     }
     public void ShowMenu()
     {

@@ -6,10 +6,17 @@ public class LevelCompletedMenu : MonoBehaviour
     public GameObject levelCompletedPanel;
     public Button restartButton;
     public Button mainMenuButton;
+    GameController gameController;
     private void Start()
     {
-        restartButton.onClick.AddListener(FindObjectOfType<GameController>().Restart);
-        mainMenuButton.onClick.AddListener(FindObjectOfType<GameController>().MainMenu);
+        gameController = FindObjectOfType<GameController>();
+        restartButton.onClick.AddListener(gameController.Restart);
+        mainMenuButton.onClick.AddListener(gameController.MainMenu);
+        gameController.LevelCompletedEvent += GameController_LevelCompletedEvent;
+    }
+    private void GameController_LevelCompletedEvent()
+    {
+        ShowMenu();
     }
     public void ShowMenu()
     {

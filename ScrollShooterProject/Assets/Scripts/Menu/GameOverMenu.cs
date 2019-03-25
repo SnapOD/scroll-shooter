@@ -6,10 +6,17 @@ public class GameOverMenu : MonoBehaviour
     public GameObject gameOverPanel;
     public Button restartButton;
     public Button mainMenuButton;
+    GameController gameController;
     private void Start()
     {
-        restartButton.onClick.AddListener(FindObjectOfType<GameController>().Restart);
-        mainMenuButton.onClick.AddListener(FindObjectOfType<GameController>().MainMenu);
+        gameController = FindObjectOfType<GameController>();
+        restartButton.onClick.AddListener(gameController.Restart);
+        mainMenuButton.onClick.AddListener(gameController.MainMenu);
+        gameController.GameOverEvent += GameOverEventHandler;
+    }
+    private void GameOverEventHandler()
+    {
+        ShowMenu();
     }
     public void ShowMenu()
     {
@@ -19,5 +26,4 @@ public class GameOverMenu : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
     }
-
 }
