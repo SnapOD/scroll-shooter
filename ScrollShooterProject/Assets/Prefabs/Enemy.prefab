@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1252030222579094
 GameObject:
   m_ObjectHideFlags: 1
@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1924480652720188
 GameObject:
   m_ObjectHideFlags: 1
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114056227957901114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1423,6 +1424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114092569564274592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1453,6 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114126853798747992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1523,6 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114258620407210548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1559,6 +1563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114288171228095438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1582,6 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114333118271890526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1606,6 +1612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114413555563492480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1618,6 +1625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114430783323672936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1641,6 +1649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114452200108084056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1669,7 +1678,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183801774695462}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09e390a80d221e0428a435c03d832ecc, type: 3}
   m_Name: 
@@ -1725,6 +1734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114801697805442974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1748,6 +1758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114823148361394778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1760,6 +1771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114835569140658056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1794,6 +1806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114876412020349212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1818,6 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114968034973399770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1830,6 +1844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114975009978322442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1864,6 +1879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+  angularVelocity: 0
 --- !u!114 &114990070120382870
 MonoBehaviour:
   m_ObjectHideFlags: 1
