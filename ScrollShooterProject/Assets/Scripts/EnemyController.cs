@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     ShootComponent shootComponent;
     MoveComponent moveComponent;
     HealthComponent healthComponent;
-    public BulletComponent bulletPrefab;
+    public BulletController bulletPrefab;
     public float bulletSpeed;
     public float damageAmount = 20f;
     public float shotInterval = 0.1f;

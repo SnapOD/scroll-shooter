@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CoinMagnetComponent : MonoBehaviour
 {
+    public LayerMask coinsLayer;
+
     public float overlapRadius = 10f;
-    //List<CoinController> coins = new List<CoinController>(50);
     Collider2D[] coinsColliders;
     private void Start()
     {
@@ -13,15 +14,15 @@ public class CoinMagnetComponent : MonoBehaviour
     }
     void Update()
     {
-        int count = Physics2D.OverlapCircleNonAlloc(transform.position, overlapRadius, coinsColliders);
+        int count = Physics2D.OverlapCircleNonAlloc(transform.position, overlapRadius, coinsColliders, coinsLayer);
         for (int i = 0; i < count; i++)
         {
-            CoinController coinController = coinsColliders[i].GetComponent<CoinController>();
-            if (coinController != null)
+            ObjectMovementComponent objectMovement = coinsColliders[i].GetComponent<ObjectMovementComponent>();
+            if (objectMovement != null)
             {
-                Vector2 dir = transform.position - coinController.transform.position;
+                Vector2 dir = transform.position - objectMovement.transform.position;
                 dir.Normalize();
-                coinController.movement += dir;
+                objectMovement.movement += dir;
             }
         }
     }

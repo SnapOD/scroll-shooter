@@ -14,9 +14,9 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Coin
   - 
   - 
   - 

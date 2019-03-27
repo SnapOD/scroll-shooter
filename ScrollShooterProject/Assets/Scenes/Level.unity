@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.449907, g: 0.4999652, b: 0.57556236, a: 1}
+  m_IndirectSpecularColor: {r: 0.44990754, g: 0.49996567, b: 0.5755633, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -292,14 +292,14 @@ GameObject:
   m_Component:
   - component: {fileID: 26826120}
   - component: {fileID: 26826119}
-  - component: {fileID: 26826118}
   - component: {fileID: 26826117}
+  - component: {fileID: 26826118}
   - component: {fileID: 26826116}
   - component: {fileID: 26826115}
-  - component: {fileID: 26826114}
   - component: {fileID: 26826113}
   - component: {fileID: 26826112}
-  m_Layer: 0
+  - component: {fileID: 26826114}
+  m_Layer: 10
   m_Name: PlayerShip
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -318,6 +318,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5855feced21aa5c41984d663055ed8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
   overlapRadius: 0.73
 --- !u!114 &26826113
 MonoBehaviour:
@@ -331,6 +334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddcb92075f8a044b8cc9a57f7dc8c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinsLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   overlapRadius: 3.53
 --- !u!114 &26826114
 MonoBehaviour:
@@ -383,6 +389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b5d5f52ece8ad4385ec372ce722e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &26826118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6844,6 +6853,7 @@ Transform:
   - {fileID: 1410194319}
   - {fileID: 996513397}
   - {fileID: 2076003519}
+  - {fileID: 2002783509}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13660,6 +13670,49 @@ Transform:
   m_Father: {fileID: 26826120}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2002783508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002783509}
+  - component: {fileID: 2002783510}
+  m_Layer: 0
+  m_Name: BulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2002783509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002783508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1081392731}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002783510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002783508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2a82ab6b614af45ab1dff803120761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 114964529119483324, guid: 02dbbdc6e96d1164d8ea692be5ac7938,
+    type: 2}
+  count: 100
 --- !u!1 &2011111447
 GameObject:
   m_ObjectHideFlags: 0

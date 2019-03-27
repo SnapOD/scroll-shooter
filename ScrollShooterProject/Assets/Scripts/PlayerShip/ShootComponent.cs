@@ -5,12 +5,21 @@ using System;
 
 public class ShootComponent : MonoBehaviour
 {
+    BulletManager bulletManager;
+    public LayerMask targetLayers;
     public event Action ShotEvent;
-    public void Shot(BulletComponent bulletPrefab, float damageAmount, Vector2 spawnPoint, Vector2 direction, float speed)
+    private void Start()
     {
-        BulletComponent bulletInst = Instantiate(bulletPrefab, spawnPoint, Quaternion.identity);
-        bulletInst.damageAmount = damageAmount;
-        bulletInst.ownerTag = gameObject.tag;
-        bulletInst.movement = direction * speed;
+        bulletManager = FindObjectOfType<BulletManager>();
+    }
+    public void Shot(BulletController bulletPrefab, float damageAmount, Vector2 spawnPoint, Vector2 direction, float speed)
+    {
+        BulletController bulletInst = bulletManager.GetBullet();
+
+        bulletInst.gameObject.SetActive(true);
+        bulletInst.transform.position = spawnPoint;
+        bulletInst.Movement = direction * speed;
+        bulletInst.DamageAmount = damageAmount;
+        bulletInst.LayerMask = targetLayers;
     }
 }
