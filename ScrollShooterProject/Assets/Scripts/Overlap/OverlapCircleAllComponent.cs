@@ -5,7 +5,7 @@ using System;
 
 public class OverlapCircleAllComponent : MonoBehaviour, IOverlapAll
 {
-    public event Action<Collider2D[]> OverlappedEvent;
+    public event Action<Collider2D[], int> OverlappedEvent;
     public float overlapRadius;
     public LayerMask layerMask;
     Collider2D[] overlaps = new Collider2D[10];
@@ -17,7 +17,7 @@ public class OverlapCircleAllComponent : MonoBehaviour, IOverlapAll
             count = Physics2D.OverlapCircleNonAlloc(transform.position, overlapRadius, overlaps, layerMask);
             if (count > 0)
             {
-                OverlappedEvent(overlaps);
+                OverlappedEvent(overlaps, count);
             }
         }
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44990754, g: 0.49996567, b: 0.5755633, a: 1}
+  m_IndirectSpecularColor: {r: 0.449907, g: 0.4999652, b: 0.57556236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,9 +296,9 @@ GameObject:
   - component: {fileID: 26826118}
   - component: {fileID: 26826116}
   - component: {fileID: 26826115}
-  - component: {fileID: 26826113}
   - component: {fileID: 26826112}
   - component: {fileID: 26826114}
+  - component: {fileID: 26826113}
   m_Layer: 10
   m_Name: PlayerShip
   m_TagString: Player
@@ -322,22 +322,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   overlapRadius: 0.73
+  colliderArrayLength: 20
 --- !u!114 &26826113
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114433106015807482, guid: 6c1bbb65c28758a4a938ccb21e67baad,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 26826111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ddcb92075f8a044b8cc9a57f7dc8c7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 84ecc49b4f2cbd740856aefeeeb65f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsLayer:
+  magnetRadius: 3.5
+  magnetForce: 20
+  layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  overlapRadius: 3.53
 --- !u!114 &26826114
 MonoBehaviour:
   m_ObjectHideFlags: 0

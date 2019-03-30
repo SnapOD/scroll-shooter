@@ -5,5 +5,5 @@ using System;
 
 internal interface IOverlapAll
 {
-    event Action<Collider2D[]> OverlappedEvent;
+    event Action<Collider2D[], int> OverlappedEvent;
 }

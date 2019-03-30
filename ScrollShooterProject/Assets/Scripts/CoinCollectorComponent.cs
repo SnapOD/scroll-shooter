@@ -6,18 +6,19 @@ public class CoinCollectorComponent : MonoBehaviour
 {
     public LayerMask layerMask;
     public float overlapRadius = 10f;
-    Collider2D[] coinsColliders;
+    public int colliderArrayLength = 20;
+    Collider2D[] colliders;
 
     private void Start()
     {
-        coinsColliders = new Collider2D[50];
+        colliders = new Collider2D[colliderArrayLength];
     }
     void Update()
     {
-        int count = Physics2D.OverlapCircleNonAlloc(transform.position, overlapRadius, coinsColliders, layerMask);
+        int count = Physics2D.OverlapCircleNonAlloc(transform.position, overlapRadius, colliders, layerMask);
         for (int i = 0; i < count; i++)
         {
-            ObjectMovementComponent obj = coinsColliders[i].GetComponent<ObjectMovementComponent>();
+            ObjectMovementComponent obj = colliders[i].GetComponent<ObjectMovementComponent>();
             if (obj != null)
             {
                 Destroy(obj.gameObject);
@@ -26,7 +27,6 @@ public class CoinCollectorComponent : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, overlapRadius);
     }
