@@ -8,7 +8,7 @@ public class ShootComponent : MonoBehaviour
     BulletManager bulletManager;
     public LayerMask targetLayers;
     public event Action ShotEvent;
-    private void Start()
+    private void Awake()
     {
         bulletManager = FindObjectOfType<BulletManager>();
     }
