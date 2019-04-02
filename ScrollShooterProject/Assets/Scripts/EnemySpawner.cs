@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public float yPosition = 10f;
     public float xRange = 10f;
     public float interval = 2f;
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public int spawnCount = 10;
     public int spawned;
     public int alive;
@@ -34,7 +34,8 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             float xRandom = UnityEngine.Random.Range(0, xRange) - xRange / 2;
-            GameObject enemyInst = Instantiate(enemyPrefab, new Vector3(xRandom, yPosition), enemyPrefab.transform.rotation);
+            int index = UnityEngine.Random.Range(0, enemyPrefabs.Length);
+            GameObject enemyInst = Instantiate(enemyPrefabs[index], new Vector3(xRandom, yPosition), enemyPrefabs[index].transform.rotation);
             enemyInst.GetComponent<HealthComponent>().DeathEvent += EnemySpawner_DeathEvent;
             enemyInst.GetComponent<EnemyController>().OutOfScreenEvent += EnemySpawner_OutOfScreenEvent;
             spawned++;

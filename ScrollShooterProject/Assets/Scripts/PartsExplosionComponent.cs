@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class PartsExplosionComponent : MonoBehaviour
 {
-    public TrashController[] trash;
+    public ObjectMovementComponent[] parts;
     HealthComponent healthComponent;
     void Start()
     {
         healthComponent = GetComponent<HealthComponent>();
         healthComponent.DeathEvent += HealthComponent_DeathEvent;
     }
-
     private void HealthComponent_DeathEvent()
     {
-        for (int i = 0; i < trash.Length; i++)
+        for (int i = 0; i < parts.Length; i++)
         {
-            trash[i].transform.SetParent(null);
-            trash[i].velocity = Random.insideUnitCircle * 10f + Vector2.down * 3f;
-            trash[i].angularVelocity = Random.Range(-120f, 120f);
+            parts[i].transform.SetParent(null);
+            parts[i].velocity = Random.insideUnitCircle * 10f + Vector2.down * 3f;
+            //parts[i].angularVelocity = Random.Range(-120f, 120f);
         }
     }
 }

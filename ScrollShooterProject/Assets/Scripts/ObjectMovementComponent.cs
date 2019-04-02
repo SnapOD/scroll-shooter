@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObjectMovementComponent : MonoBehaviour
 {
-    public Vector2 movement;
+    public Vector2 velocity;
     void Update()
     {
-        transform.Translate(movement * Time.deltaTime);
+        transform.Translate(velocity * Time.deltaTime);
     }
 }

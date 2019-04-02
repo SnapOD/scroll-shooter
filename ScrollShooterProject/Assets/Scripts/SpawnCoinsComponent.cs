@@ -20,7 +20,7 @@ public class SpawnCoinsComponent : MonoBehaviour
         {
             ObjectMovementComponent inst = Instantiate(coinPrefab, transform.position, Quaternion.identity);
             inst.transform.localScale = Vector3.one * Random.Range(0.1f, 0.3f);
-            inst.movement = Random.insideUnitCircle + Vector2.down * 3f/** 0.4f*/;
+            inst.velocity = Random.insideUnitCircle + Vector2.down * 3f/** 0.4f*/;
         }
     }
 }

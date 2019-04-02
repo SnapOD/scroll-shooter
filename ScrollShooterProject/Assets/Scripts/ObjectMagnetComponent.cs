@@ -25,7 +25,7 @@ public class ObjectMagnetComponent : MonoBehaviour
             {
                 Vector2 dir = transform.position - obj.transform.position;
                 dir.Normalize();
-                obj.movement += dir * magnetForce * Time.deltaTime;
+                obj.velocity += dir * magnetForce * Time.deltaTime;
             }
         }
     }

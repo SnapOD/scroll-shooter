@@ -13,7 +13,7 @@ public class BulletController : MonoBehaviour
     public Bounds bounds;
 
     public float DamageAmount { get { return damageComponent.damageAmount; } set { damageComponent.damageAmount = value; } }
-    public Vector2 Movement { get { return movementComponent.movement; } set { movementComponent.movement = value; } }
+    public Vector2 Movement { get { return movementComponent.velocity; } set { movementComponent.velocity = value; } }
     public LayerMask LayerMask { get { return overlapComponent.layerMask; } set { overlapComponent.layerMask = value; } }
     private void Awake()
     {
