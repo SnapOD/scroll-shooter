@@ -9,10 +9,14 @@ public class TouchInput : MonoBehaviour, IInputSource
     {
         get
         {
+            if (Time.deltaTime == 0f)
+                return Vector2.zero;
+
             if (Input.touchCount == 0)
                 return new Vector2();
             Touch touch = Input.GetTouch(0);
-            Vector2 delta = touch.deltaPosition * touch.deltaTime;
+            float screenMult = Screen.width / 1000f;
+            Vector2 delta = touch.deltaPosition * screenMult / Time.deltaTime;
             return delta * sensitivity;
         }
     }
