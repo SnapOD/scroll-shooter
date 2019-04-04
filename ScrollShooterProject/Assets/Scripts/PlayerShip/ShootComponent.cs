@@ -21,5 +21,8 @@ public class ShootComponent : MonoBehaviour
         bulletInst.Movement = direction * speed;
         bulletInst.DamageAmount = damageAmount;
         bulletInst.LayerMask = targetLayers;
+
+        if (ShotEvent != null)
+            ShotEvent();
     }
 }
