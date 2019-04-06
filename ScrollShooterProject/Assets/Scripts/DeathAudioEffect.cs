@@ -17,6 +17,7 @@ public class DeathAudioEffect : MonoBehaviour
         GameObject gameObject = new GameObject();
         AudioSource audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
+        audioSource.volume = 0.2f;
         audioSource.Play();
         Destroy(gameObject, clip.length);
     }
