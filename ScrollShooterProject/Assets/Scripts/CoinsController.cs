@@ -9,7 +9,7 @@ public class CoinsController : MonoBehaviour
     [SerializeField]
     int coins;
     public int Coins { get { return coins; } }
-    public void AddCoinst(int amount)
+    public void AddCoins(int amount)
     {
         coins += amount;
         if (CoinsChangedEvent != null)

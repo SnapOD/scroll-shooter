@@ -14,7 +14,7 @@ public class CoinIncrement : MonoBehaviour
     }
     private void ObjectCollector_ObjectsCollectedEvent(Collider2D[] arg1, int arg2)
     {
-        coinsController.AddCoinst(arg2);
+        coinsController.AddCoins(arg2);
         for (int i = 0; i < arg2; i++)
         {
             Destroy(arg1[i].gameObject);

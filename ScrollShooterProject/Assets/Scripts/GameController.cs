@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public GameObject playerShip;
 
     EnemySpawner enemySpawner;
+    EnemyQueueManager enemyQueueManager;
     HealthComponent playerHealthComponent;
 
     bool isPause;
@@ -23,9 +24,10 @@ public class GameController : MonoBehaviour
     bool isPlayerDestroyed;
     void Start()
     {
-        enemySpawner = FindObjectOfType<EnemySpawner>();
-        enemySpawner.AllEnemiesDestroyedEvent += EnemySpawner_AllEnemiesDestroyedEvent;
-        enemySpawner.StartSpawn();
+        enemyQueueManager = FindObjectOfType<EnemyQueueManager>();
+        //enemySpawner = FindObjectOfType<EnemySpawner>();
+        //enemySpawner.AllEnemiesDestroyedEvent += EnemySpawner_AllEnemiesDestroyedEvent;
+        //enemySpawner.StartSpawn();
         playerHealthComponent = playerShip.GetComponentInChildren<HealthComponent>();
         playerHealthComponent.DeathEvent += PlayerHealthComponent_DeathEvent;
     }
