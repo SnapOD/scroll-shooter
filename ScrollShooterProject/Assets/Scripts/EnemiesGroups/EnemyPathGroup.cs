@@ -47,6 +47,7 @@ public class EnemyPathGroup : EnemyGroup
                 timer = spawnEnemiesInterval;
                 Vector2 point = path.points[0];
                 GameObject enemyInstance = Instantiate(enemyPrefab, point, Quaternion.identity);
+                enemyInstance.GetComponent<PathMoveComponent>().path = path;
                 spawnedCount++;
             }
             return true;

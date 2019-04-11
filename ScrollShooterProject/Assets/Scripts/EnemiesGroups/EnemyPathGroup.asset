@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: EnemyPathGroup
   m_EditorClassIdentifier: 
   path: {fileID: 11400000, guid: 72e3a8a75a62a574f88d42d73d64626f, type: 2}
-  enemyPrefab: {fileID: 1365581127576614, guid: cd00de2c83f7cd54b90f59882be04187,
+  enemyPrefab: {fileID: 1365581127576614, guid: b3436ac8344440e4c80fab9c07ed8363,
     type: 2}
   enemiesCount: 3
   spawnEnemiesInterval: 0.5

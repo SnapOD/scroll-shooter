@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public event Action<GameObject> OutOfScreenEvent;
     ShootComponent shootComponent;
-    MoveComponent moveComponent;
+    //MoveComponent moveComponent;
     HealthComponent healthComponent;
     public BulletController bulletPrefab;
     public float bulletSpeed;
@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         shootComponent = GetComponent<ShootComponent>();
-        moveComponent = GetComponent<MoveComponent>();
+        //moveComponent = GetComponent<MoveComponent>();
         healthComponent = GetComponent<HealthComponent>();
         healthComponent.DeathEvent += ShipHealth_DeathEvent;
     }
@@ -31,8 +31,8 @@ public class EnemyController : MonoBehaviour
     }
     void Update()
     {
-        if (movementEnabled)
-            moveComponent.Move(Vector2.down, 3f);
+        //if (movementEnabled)
+        //    moveComponent.Move(Vector2.down, 3f);
 
         shotTimer -= Time.deltaTime;
         if (shootingEnabled && shotTimer <= 0)
