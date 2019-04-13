@@ -1,45 +1,48 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class EnemyPathGroup : EnemyGroup
+public class EnemyPathGroup : QueueItem
 {
+    public override event Action<QueueItem> CompletedEvent;
     public PathScriptableObject path;
     public GameObject enemyPrefab;
     public int enemiesCount;
     public float spawnEnemiesInterval;
     public float moveSpeed;
-    public override bool IsInstance
-    {
-        get
-        {
-            return isInstance;
-        }
-    }
 
     private bool isInstance = false;
     private float timer;
     private int spawnedCount;
+    private Coroutine coroutine;
+    private int destroyedCount;
+
+    public override void Run(MonoBehaviour behaviour)
+    {
+        if (coroutine == null)
+            coroutine = behaviour.StartCoroutine(RunCoroutine());
+    }
     private void Initialize(EnemyPathGroup source)
     {
-        if (!IsInstance) throw new System.InvalidOperationException("Obj is not instance");
+        //if (!IsInstance) throw new System.InvalidOperationException("Obj is not instance");
         path = source.path;
         enemyPrefab = source.enemyPrefab;
         enemiesCount = source.enemiesCount;
         spawnEnemiesInterval = source.spawnEnemiesInterval;
         moveSpeed = source.moveSpeed;
     }
-    public override EnemyGroup CreateInstance()
+    public override QueueItem CreateInstance()
     {
         EnemyPathGroup instance = (EnemyPathGroup)ScriptableObject.CreateInstance(GetType());
         instance.isInstance = true;
         instance.Initialize(this);
         return instance;
     }
-    public override bool GroupUpdate()
+    private IEnumerator RunCoroutine()
     {
-        if (spawnedCount != enemiesCount)
+        while (spawnedCount != enemiesCount)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
@@ -48,10 +51,29 @@ public class EnemyPathGroup : EnemyGroup
                 Vector2 point = path.points[0];
                 GameObject enemyInstance = Instantiate(enemyPrefab, point, Quaternion.identity);
                 enemyInstance.GetComponent<PathMoveComponent>().path = path;
+                enemyInstance.GetComponent<HealthComponent>().DeathEvent += EnemyDestroyedHandler;
+                enemyInstance.GetComponent<EnemyController>().OutOfScreenEvent += EnemyPathGroup_OutOfScreenEvent;
                 spawnedCount++;
             }
-            return true;
+            yield return null;
         }
-        return false;
+        yield return new WaitUntil(CompletedPredicate);
+        if (CompletedEvent != null)
+            CompletedEvent(this);
     }
+
+    private void EnemyPathGroup_OutOfScreenEvent(GameObject obj)
+    {
+        EnemyDestroyedHandler();
+    }
+    private void EnemyDestroyedHandler()
+    {
+        destroyedCount++;
+    }
+
+    private bool CompletedPredicate()
+    {
+        return enemiesCount == spawnedCount && spawnedCount == destroyedCount;
+    }
+
 }

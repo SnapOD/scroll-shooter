@@ -16,20 +16,21 @@ public class GameController : MonoBehaviour
     public GameObject playerShip;
 
     EnemySpawner enemySpawner;
-    EnemyQueueManager enemyQueueManager;
+    LevelQueueManager enemyQueueManager;
     HealthComponent playerHealthComponent;
 
     bool isPause;
     bool isEnemiesDestroyed;
     bool isPlayerDestroyed;
-    void Start()
+
+    int levelEnemiesCount;
+    private void Start()
     {
-        enemyQueueManager = FindObjectOfType<EnemyQueueManager>();
-        //enemySpawner = FindObjectOfType<EnemySpawner>();
-        //enemySpawner.AllEnemiesDestroyedEvent += EnemySpawner_AllEnemiesDestroyedEvent;
-        //enemySpawner.StartSpawn();
+        enemyQueueManager = FindObjectOfType<LevelQueueManager>();
+        enemyQueueManager.QueueOverEvent += LevelCompleted;
+
         playerHealthComponent = playerShip.GetComponentInChildren<HealthComponent>();
-        playerHealthComponent.DeathEvent += PlayerHealthComponent_DeathEvent;
+        playerHealthComponent.DeathEvent += GameOver;
     }
     private void Update()
     {
@@ -70,7 +71,7 @@ public class GameController : MonoBehaviour
         if (QuitEvent != null) QuitEvent();
         Application.Quit();
     }
-    private void EnemySpawner_AllEnemiesDestroyedEvent()
+    private void LevelCompleted()
     {
         if (!isPlayerDestroyed)
         {
@@ -79,7 +80,7 @@ public class GameController : MonoBehaviour
                 LevelCompletedEvent();
         }
     }
-    private void PlayerHealthComponent_DeathEvent()
+    private void GameOver()
     {
         if (!isEnemiesDestroyed)
         {
