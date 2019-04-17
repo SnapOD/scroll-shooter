@@ -49,7 +49,7 @@ public class EnemyPointsGroup : QueueItem
         for (int i = 0; i < points.Length; i++)
         {
             GameObject enemyInst = GameObject.Instantiate(enemyPrefab, points[i].spawnPoint, Quaternion.identity);
-            PointMoveComponent moveComponent = enemyInst.GetComponent<PointMoveComponent>();
+            PointMoveComponent moveComponent = enemyInst.AddComponent<PointMoveComponent>();
             moveComponent.target = points[i].targetPoint;
             moveComponent.speed = flySpeed;
             enemyInst.GetComponent<HealthComponent>().DeathEvent += EnemyDestroyed;

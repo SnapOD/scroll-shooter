@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 114914484012004834}
   - component: {fileID: 114418312893235932}
   - component: {fileID: 114137562338383390}
-  - component: {fileID: 114415473640408490}
   - component: {fileID: 114103408452768326}
   - component: {fileID: 114030141971852792}
   - component: {fileID: 114053208520688662}
@@ -1529,17 +1528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
---- !u!114 &114415473640408490
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1099967064004456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b923b9b92f5d8745b97fcb8e6622b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114418312893235932
 MonoBehaviour:
   m_ObjectHideFlags: 1

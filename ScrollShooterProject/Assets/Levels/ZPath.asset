@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0fd05081c7eab44b3d9aab0904dd6c, type: 3}
+  m_Name: ZPath
+  m_EditorClassIdentifier: 
+  nodes:
+  - {x: -9.762853, y: 15.783423}
+  - {x: 8.833514, y: 12.611071}
+  - {x: -5.517222, y: 5.720439}
+  - {x: 10.693372, y: 3.3833876}
+  points:
+  - {x: -9.762853, y: 15.783423}
+  - {x: 8.833514, y: 12.611071}
+  - {x: -5.517222, y: 5.720439}
+  - {x: 10.693372, y: 3.3833876}
+  spacing: 0
+  isClosed: 0

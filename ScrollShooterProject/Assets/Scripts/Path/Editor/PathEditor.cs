@@ -13,7 +13,7 @@ public class PathEditor : Editor
     int selectedNodeIndex = -1;
     private void OnEnable() // выполняется при выборе компонента, к которому прикреплено расширение
     {
-        Debug.Log("OnEnable");
+        //Debug.Log("OnEnable");
         SceneView.onSceneGUIDelegate += OnSceneGUI; // нужно, чтобы отслеживать работу со сценой в расширении, привязанном к ScriptableObject
         Undo.undoRedoPerformed += UndoRedoHandler;
         path = target as PathScriptableObject; // получили ссылку на построенный путь
@@ -161,7 +161,7 @@ public class PathEditor : Editor
     }
     private void UpdatePath()
     {
-        Debug.Log("UpdatePath");
+        //Debug.Log("UpdatePath");
         path.nodes = polyLine.GetNodes();
         path.points = polyLine.GetPath();
         EditorUtility.SetDirty(path); // исправило проблему с сериализацией массива

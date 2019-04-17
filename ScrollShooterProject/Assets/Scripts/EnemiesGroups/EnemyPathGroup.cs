@@ -50,7 +50,7 @@ public class EnemyPathGroup : QueueItem
                 timer = spawnEnemiesInterval;
                 Vector2 point = path.points[0];
                 GameObject enemyInstance = Instantiate(enemyPrefab, point, Quaternion.identity);
-                enemyInstance.GetComponent<PathMoveComponent>().path = path;
+                enemyInstance.AddComponent<PathMoveComponent>().path = path;
                 enemyInstance.GetComponent<HealthComponent>().DeathEvent += EnemyDestroyedHandler;
                 enemyInstance.GetComponent<EnemyController>().OutOfScreenEvent += EnemyPathGroup_OutOfScreenEvent;
                 spawnedCount++;
