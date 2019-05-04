@@ -5,6 +5,7 @@ using System;
 
 public class EnemyController : MonoBehaviour
 {
+    public event Action<EnemyController> FinalizeEvent;
     public event Action<GameObject> OutOfScreenEvent;
     ShootComponent shootComponent;
     //MoveComponent moveComponent;
@@ -27,7 +28,7 @@ public class EnemyController : MonoBehaviour
     }
     private void ShipHealth_DeathEvent()
     {
-        Destroy(gameObject);
+        Destroy();
     }
     void Update()
     {
@@ -42,5 +43,11 @@ public class EnemyController : MonoBehaviour
         }
         if (OutOfScreenEvent != null && transform.position.y < -2f)
             OutOfScreenEvent(gameObject);
+    }
+    public void Destroy()
+    {
+        if (FinalizeEvent != null)
+            FinalizeEvent(this);
+        Destroy(gameObject);
     }
 }

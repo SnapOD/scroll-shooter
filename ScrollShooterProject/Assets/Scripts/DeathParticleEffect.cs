@@ -9,9 +9,9 @@ public class DeathParticleEffect : MonoBehaviour
     void Start()
     {
         healthComponent = GetComponentInChildren<HealthComponent>();
-        healthComponent.DeathEvent += EnemyComponent_DeathEvent;
+        healthComponent.DeathEvent += DeathEventHandler;
     }
-    private void EnemyComponent_DeathEvent()
+    private void DeathEventHandler()
     {
         ParticleSystem inst = Instantiate(effectPrefab, transform.position, Quaternion.identity);
         Destroy(inst.gameObject, inst.main.duration);

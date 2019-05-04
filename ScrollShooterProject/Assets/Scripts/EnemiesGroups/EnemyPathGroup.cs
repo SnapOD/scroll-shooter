@@ -52,7 +52,6 @@ public class EnemyPathGroup : QueueItem
                 GameObject enemyInstance = Instantiate(enemyPrefab, point, Quaternion.identity);
                 enemyInstance.AddComponent<PathMoveComponent>().path = path;
                 enemyInstance.GetComponent<HealthComponent>().DeathEvent += EnemyDestroyedHandler;
-                enemyInstance.GetComponent<EnemyController>().OutOfScreenEvent += EnemyPathGroup_OutOfScreenEvent;
                 spawnedCount++;
             }
             yield return null;
@@ -60,11 +59,6 @@ public class EnemyPathGroup : QueueItem
         yield return new WaitUntil(CompletedPredicate);
         if (CompletedEvent != null)
             CompletedEvent(this);
-    }
-
-    private void EnemyPathGroup_OutOfScreenEvent(GameObject obj)
-    {
-        EnemyDestroyedHandler();
     }
     private void EnemyDestroyedHandler()
     {

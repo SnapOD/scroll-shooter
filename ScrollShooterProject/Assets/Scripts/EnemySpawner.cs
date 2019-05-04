@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void EnemySpawner_OutOfScreenEvent(GameObject gameObject)
     {
-        Destroy(gameObject);
+        gameObject.GetComponent<EnemyController>().Destroy();
         DecreaseAlive();
     }
 

@@ -23,5 +23,6 @@ MonoBehaviour:
   flySpeed: 2
   spawnDelay: 0.5
   spawnInterval: 0.5
+  moveBackDelay: 3
   enemyPrefab: {fileID: 1099967064004456, guid: cfd5d2934c78b204c9cbff6a09e02222,
     type: 2}

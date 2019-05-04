@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BulletManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class BulletManager : MonoBehaviour
     List<BulletController> pool;
     void Awake()
     {
+        GC.Collect();
+        int gen = GC.GetGeneration(bulletPrefab);
+
         pool = new List<BulletController>();
         for (int i = 0; i < count; i++)
         {

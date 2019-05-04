@@ -13,10 +13,10 @@ public class GameController : MonoBehaviour
     public event Action MainMenuEvent;
     public event Action RestartEvent;
     public event Action QuitEvent;
-    public GameObject playerShip;
+    public PlayerController playerShip;
 
     EnemySpawner enemySpawner;
-    LevelQueueManager enemyQueueManager;
+    LevelQueueManager levelQueueManager;
     HealthComponent playerHealthComponent;
 
     bool isPause;
@@ -26,8 +26,8 @@ public class GameController : MonoBehaviour
     int levelEnemiesCount;
     private void Start()
     {
-        enemyQueueManager = FindObjectOfType<LevelQueueManager>();
-        enemyQueueManager.QueueOverEvent += LevelCompleted;
+        levelQueueManager = FindObjectOfType<LevelQueueManager>();
+        levelQueueManager.QueueOverEvent += LevelCompleted;
 
         playerHealthComponent = playerShip.GetComponentInChildren<HealthComponent>();
         playerHealthComponent.DeathEvent += GameOver;
@@ -44,6 +44,8 @@ public class GameController : MonoBehaviour
     }
     public void Pause()
     {
+        if (isEnemiesDestroyed || isPlayerDestroyed)
+            return;
         Time.timeScale = 0f;
         isPause = true;
         if (PauseEvent != null) PauseEvent();
@@ -63,7 +65,7 @@ public class GameController : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
-        if (RestartEvent != null) RestartEvent();
+        if (RestartEvent != null) MainMenuEvent();
         SceneManager.LoadScene("MainMenu");
     }
     public void Quit()

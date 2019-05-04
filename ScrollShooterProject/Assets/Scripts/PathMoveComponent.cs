@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PathMoveComponent : MonoBehaviour
 {
+    public event Action PathPassedEvent;
     public PathScriptableObject path;
     public float speed = 5f;
     int targetIndex = 1;
@@ -16,6 +18,8 @@ public class PathMoveComponent : MonoBehaviour
     }
     void Update()
     {
+        if (targetIndex == -1)
+            return;
         if (targetIndex < path.points.Length)
         {
             transform.position += moveDir * speed * Time.deltaTime;
@@ -28,6 +32,12 @@ public class PathMoveComponent : MonoBehaviour
                     return;
                 moveDir = (Vector3)path.points[targetIndex] - transform.position;
                 moveDir.Normalize();
+                if (targetIndex == path.points.Length)
+                {
+                    targetIndex = -1;
+                    if (PathPassedEvent != null)
+                        PathPassedEvent();
+                }
             }
         }
     }
