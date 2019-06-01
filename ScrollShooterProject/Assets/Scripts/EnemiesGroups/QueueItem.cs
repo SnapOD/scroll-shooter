@@ -7,6 +7,7 @@ public abstract class QueueItem : ScriptableObject
 {
     public abstract event Action<QueueItem> CompletedEvent;
     public abstract QueueItem CreateInstance();
+    public abstract bool IsInstance { get; }
     public abstract void Run(MonoBehaviour monoBehaviour);
 
 }

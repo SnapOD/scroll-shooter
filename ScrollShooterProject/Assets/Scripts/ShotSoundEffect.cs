@@ -10,9 +10,11 @@ public class ShotSoundEffect : MonoBehaviour
     AudioSource audioSource;
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         shootComponent = GetComponent<ShootComponent>();
+        if (shootComponent == null)
+            return;
         shootComponent.ShotEvent += ShootComponent_ShotEvent;
+        audioSource = GetComponent<AudioSource>();
         audioSource.clip = clip;
     }
     private void ShootComponent_ShotEvent()

@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EnemyPointsGroup : QueueItem
 {
+    public override event Action<QueueItem> CompletedEvent;
     [Serializable]
     public struct PointsPair
     {
@@ -18,17 +19,25 @@ public class EnemyPointsGroup : QueueItem
     public float spawnInterval;
     public float moveBackDelay;
     public GameObject enemyPrefab;
-    public override event Action<QueueItem> CompletedEvent;
+
+    public ShootingModule shootingModule;
 
     int enemyCount;
     int spawnedCount;
     int destroyedCount;
 
-    float timer;
+    bool isInstance;
     Dictionary<GameObject, int> pairs;
     Coroutine coroutine;
     MonoBehaviour monoBehaviour;
 
+    public override bool IsInstance
+    {
+        get
+        {
+            return isInstance;
+        }
+    }
     public override QueueItem CreateInstance()
     {
         EnemyPointsGroup inst = (EnemyPointsGroup)ScriptableObject.CreateInstance(GetType());
@@ -39,10 +48,14 @@ public class EnemyPointsGroup : QueueItem
         inst.moveBackDelay = moveBackDelay;
         inst.enemyPrefab = enemyPrefab;
         inst.pairs = new Dictionary<GameObject, int>();
+        inst.isInstance = true;
+        inst.shootingModule = shootingModule;
         return inst;
     }
     public override void Run(MonoBehaviour monoBehaviour)
     {
+        if (!isInstance)
+            throw new InvalidOperationException("This object is not instance of QueueItem. Call CreateInstance");
         if (coroutine != null) return;
         enemyCount = points.Length;
         this.monoBehaviour = monoBehaviour;
@@ -61,6 +74,8 @@ public class EnemyPointsGroup : QueueItem
             enemyInst.GetComponent<HealthComponent>().DeathEvent += DeathEventHandler;
             spawnedCount++;
             pairs.Add(enemyInst, i);
+            if (shootingModule != null)
+                shootingModule.InitializeObject(enemyInst);
             yield return new WaitForSeconds(spawnInterval);
         }
     }

@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 61073956648792658}
   - component: {fileID: 82025182125928874}
   - component: {fileID: 114962096869071620}
-  - component: {fileID: 114889663927457394}
   - component: {fileID: 114640182159734864}
   - component: {fileID: 114206911549112410}
   - component: {fileID: 114446736548311380}
@@ -83,6 +82,7 @@ GameObject:
   - component: {fileID: 114372391163558498}
   - component: {fileID: 114553686475941202}
   - component: {fileID: 114779593140081716}
+  - component: {fileID: 114087480527261608}
   m_Layer: 9
   m_Name: EnemyPrefabBlue1
   m_TagString: Untagged
@@ -793,6 +793,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
+--- !u!114 &114087480527261608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365581127576614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23dbb60f00b6e74681b4feba44af726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114160084564247028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1013,20 +1024,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
---- !u!114 &114889663927457394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365581127576614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18b5d5f52ece8ad4385ec372ce722e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayers:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!114 &114962096869071620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1038,12 +1035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa5dc4a1c2ca6b43abb6f27a50d7e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpeed: 5
-  damageAmount: 50
-  shotInterval: 3
-  shootingEnabled: 1
-  movementEnabled: 1
 --- !u!212 &212235117362237726
 SpriteRenderer:
   m_ObjectHideFlags: 1

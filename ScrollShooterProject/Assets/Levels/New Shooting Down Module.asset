@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89d02539ce1f144d883c34a837664a1, type: 3}
+  m_Name: New Shooting Down Module
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 114964529119483324, guid: 02dbbdc6e96d1164d8ea692be5ac7938,
+    type: 2}
+  shootingDelay: 1
+  shootingInterval: 10000
+  bulletSpeed: 5
+  direction: {x: 0, y: -1}
+  bulletDamageAmount: 50
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 1024

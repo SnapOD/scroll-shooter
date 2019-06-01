@@ -26,3 +26,4 @@ MonoBehaviour:
   moveBackDelay: 3
   enemyPrefab: {fileID: 1365581127576614, guid: cd00de2c83f7cd54b90f59882be04187,
     type: 2}
+  shootingModule: {fileID: 11400000, guid: f12213a3d2a8c564b82b83ec093cffcb, type: 2}

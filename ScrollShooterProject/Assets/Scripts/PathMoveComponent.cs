@@ -5,7 +5,7 @@ using System;
 
 public class PathMoveComponent : MonoBehaviour
 {
-    public event Action PathPassedEvent;
+    public event Action<PathMoveComponent> PathPassedEvent;
     public PathScriptableObject path;
     public float speed = 5f;
     int targetIndex = 1;
@@ -29,15 +29,15 @@ public class PathMoveComponent : MonoBehaviour
             {
                 targetIndex++;
                 if (targetIndex == path.points.Length)
-                    return;
-                moveDir = (Vector3)path.points[targetIndex] - transform.position;
-                moveDir.Normalize();
-                if (targetIndex == path.points.Length)
                 {
                     targetIndex = -1;
                     if (PathPassedEvent != null)
-                        PathPassedEvent();
+                        PathPassedEvent(this);
+                    return;
                 }
+                moveDir = (Vector3)path.points[targetIndex] - transform.position;
+                moveDir.Normalize();
+
             }
         }
     }

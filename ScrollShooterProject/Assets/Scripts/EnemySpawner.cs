@@ -37,7 +37,6 @@ public class EnemySpawner : MonoBehaviour
             int index = UnityEngine.Random.Range(0, enemyPrefabs.Length);
             GameObject enemyInst = Instantiate(enemyPrefabs[index], new Vector3(xRandom, yPosition), enemyPrefabs[index].transform.rotation);
             enemyInst.GetComponent<HealthComponent>().DeathEvent += EnemySpawner_DeathEvent;
-            enemyInst.GetComponent<EnemyController>().OutOfScreenEvent += EnemySpawner_OutOfScreenEvent;
             spawned++;
             alive++;
             if (spawnCount == spawned)

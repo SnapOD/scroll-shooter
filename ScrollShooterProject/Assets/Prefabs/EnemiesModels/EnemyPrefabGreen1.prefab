@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 61984435613670622}
   - component: {fileID: 82505789735274986}
   - component: {fileID: 114914484012004834}
-  - component: {fileID: 114418312893235932}
   - component: {fileID: 114137562338383390}
   - component: {fileID: 114103408452768326}
   - component: {fileID: 114030141971852792}
@@ -69,6 +68,7 @@ GameObject:
   - component: {fileID: 114420420751134994}
   - component: {fileID: 114777141273884116}
   - component: {fileID: 114223275624206850}
+  - component: {fileID: 114071456013785626}
   m_Layer: 9
   m_Name: EnemyPrefabGreen1
   m_TagString: Untagged
@@ -1497,6 +1497,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 100
+--- !u!114 &114071456013785626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099967064004456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23dbb60f00b6e74681b4feba44af726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114103408452768326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1558,20 +1569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
---- !u!114 &114418312893235932
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1099967064004456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18b5d5f52ece8ad4385ec372ce722e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayers:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!114 &114420420751134994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1794,12 +1791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa5dc4a1c2ca6b43abb6f27a50d7e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpeed: 5
-  damageAmount: 50
-  shotInterval: 3
-  shootingEnabled: 1
-  movementEnabled: 1
 --- !u!114 &114937471345690578
 MonoBehaviour:
   m_ObjectHideFlags: 1
