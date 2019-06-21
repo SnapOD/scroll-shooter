@@ -13,11 +13,15 @@ public class EnemyPathGroup : QueueItem
     public float spawnEnemiesInterval;
     public float moveSpeed;
 
+    public ShootingModule shootingModule;
+
     private bool isInstance = false;
     private float timer;
     private int spawnedCount;
     private Coroutine coroutine;
     private int destroyedCount;
+
+
 
     public override bool IsInstance
     {
@@ -36,12 +40,13 @@ public class EnemyPathGroup : QueueItem
     }
     private void Initialize(EnemyPathGroup source)
     {
-        //if (!IsInstance) throw new System.InvalidOperationException("Obj is not instance");
+        if (!IsInstance) throw new System.InvalidOperationException("Obj is not instance");
         path = source.path;
         enemyPrefab = source.enemyPrefab;
         enemiesCount = source.enemiesCount;
         spawnEnemiesInterval = source.spawnEnemiesInterval;
         moveSpeed = source.moveSpeed;
+        shootingModule = source.shootingModule;
     }
     public override QueueItem CreateInstance()
     {
@@ -60,6 +65,7 @@ public class EnemyPathGroup : QueueItem
                 timer = spawnEnemiesInterval;
                 Vector2 point = path.points[0];
                 GameObject enemyInstance = Instantiate(enemyPrefab, point, Quaternion.identity);
+                shootingModule.InitializeObject(enemyInstance);
                 PathMoveComponent instPathMove = enemyInstance.AddComponent<PathMoveComponent>();
                 instPathMove.path = path;
                 instPathMove.PathPassedEvent += InstPathMove_PathPassedEvent;

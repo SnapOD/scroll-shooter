@@ -7,12 +7,10 @@ public class BulletManager : MonoBehaviour
 {
     public BulletController bulletPrefab;
     public int count = 100;
+    //Dictionary<Type, List<BulletController>> pool1;
     List<BulletController> pool;
     void Awake()
     {
-        GC.Collect();
-        int gen = GC.GetGeneration(bulletPrefab);
-
         pool = new List<BulletController>();
         for (int i = 0; i < count; i++)
         {

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   shootingDelay: 1
-  shootingInterval: 1
-  bulletSpeed: 10
-  bulletDamageAmount: 10
+  shootingInterval: 3
+  bulletSpeed: 6
+  bulletDamageAmount: 50
   targetLayers:
     serializedVersion: 2
     m_Bits: 1024

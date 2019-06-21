@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b314b141013024f97eabf2db2e9461, type: 3}
+  m_Name: EnemyPointsGroup4
+  m_EditorClassIdentifier: 
+  points:
+  - spawnPoint: {x: -10, y: 15}
+    targetPoint: {x: -4, y: 15}
+  - spawnPoint: {x: -10, y: 12.5}
+    targetPoint: {x: -2, y: 12.5}
+  - spawnPoint: {x: 10, y: 15}
+    targetPoint: {x: 4, y: 15}
+  - spawnPoint: {x: 10, y: 12.5}
+    targetPoint: {x: 2, y: 12.5}
+  flySpeed: 1
+  spawnDelay: 0.5
+  spawnInterval: 0.1
+  moveBackDelay: 7
+  enemyPrefab: {fileID: 1099967064004456, guid: cfd5d2934c78b204c9cbff6a09e02222,
+    type: 2}
+  shootingModule: {fileID: 11400000, guid: b2e72c9a24372b54f8429137565e3f29, type: 2}

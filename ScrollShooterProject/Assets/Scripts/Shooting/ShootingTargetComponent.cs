@@ -56,11 +56,13 @@ public class ShootingTargetComponent : MonoBehaviour, IShooting
         {
             intervalTimer = shootingInterval;
             Shot();
-            Debug.Log("OK");
+            //Debug.Log("OK");
         }
     }
     private void Shot()
     {
+        if (target == null)
+            return;
         BulletController bulletInst = bulletManager.GetBullet();
 
         bulletInst.gameObject.SetActive(true);

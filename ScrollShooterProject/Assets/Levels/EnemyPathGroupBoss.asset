@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2a873e87ec0df44b10cbcbd1b4bea8, type: 3}
+  m_Name: EnemyPathGroupBoss
+  m_EditorClassIdentifier: 
+  path: {fileID: 11400000, guid: 782abe7e6ba24b649901e3be369ed9e4, type: 2}
+  enemyPrefab: {fileID: 1099967064004456, guid: a0c2a313f7373174f9b71c74963b40a0,
+    type: 2}
+  enemiesCount: 1
+  spawnEnemiesInterval: 0.5
+  moveSpeed: 0.1
+  shootingModule: {fileID: 11400000, guid: 6ef00effffd818b4c9e998452a60a5b8, type: 2}

@@ -7,3 +7,4 @@ public abstract class ShootingModule : ScriptableObject
     public abstract IShooting InitializeObject(GameObject gameObject);
 
 }
+

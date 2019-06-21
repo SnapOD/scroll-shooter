@@ -54,7 +54,6 @@ public class ShootingDownComponent : MonoBehaviour, IShooting
         {
             intervalTimer = shootingInterval;
             Shot();
-            Debug.Log("OK");
         }
     }
     private void Shot()

@@ -18,7 +18,14 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        inputSource = GetComponent<IInputSource>();
+
+        //inputSource = GetComponent<IInputSource>();
+
+        if (Application.platform == RuntimePlatform.Android)
+            inputSource = GetComponent<TouchInput>();
+        else
+            inputSource = GetComponent<IInputSource>();
+
         moveComponent = GetComponent<MoveComponent>();
         shootComponent = GetComponent<ShootComponent>();
         shipHealth = GetComponentInChildren<HealthComponent>();

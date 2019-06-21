@@ -14,6 +14,7 @@ MonoBehaviour:
   path: {fileID: 11400000, guid: 72e3a8a75a62a574f88d42d73d64626f, type: 2}
   enemyPrefab: {fileID: 1365581127576614, guid: cd00de2c83f7cd54b90f59882be04187,
     type: 2}
-  enemiesCount: 4
-  spawnEnemiesInterval: 0.5
+  enemiesCount: 20
+  spawnEnemiesInterval: 0.4
   moveSpeed: 1
+  shootingModule: {fileID: 11400000, guid: 7a3383789631cdf4c9bf05c6c70a69ae, type: 2}

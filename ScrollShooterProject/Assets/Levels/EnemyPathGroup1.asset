@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2a873e87ec0df44b10cbcbd1b4bea8, type: 3}
+  m_Name: EnemyPathGroup1
+  m_EditorClassIdentifier: 
+  path: {fileID: 11400000, guid: dfbdf744329af5c4d8cbb60a6a845ffa, type: 2}
+  enemyPrefab: {fileID: 1365581127576614, guid: cd00de2c83f7cd54b90f59882be04187,
+    type: 2}
+  enemiesCount: 20
+  spawnEnemiesInterval: 0.5
+  moveSpeed: 3
+  shootingModule: {fileID: 11400000, guid: a0180654146d6f6499a674a56b6a7dfd, type: 2}
